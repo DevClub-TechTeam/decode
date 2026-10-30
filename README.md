@@ -1,5 +1,8 @@
 # ctf
 
+On the main branch is the Latest full build of the DECODE ctf tool without any challenges loaded, go to archive branches to find the challenges from that DECODE event
+
+
 ### Startup
 
 docker-compose is required.
