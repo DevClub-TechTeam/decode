@@ -16,3 +16,19 @@ services:
       interval: 5s
       timeout: 5s
       retries: 30
+
+  app:
+    build:
+        context: .
+        dockerfile: ctf-hackathon-v2-backend/Dockerfile
+    container_name: DECODE_app
+    restart: unless-stopped
+    ports:
+        - "3000:3000"
+    environment:
+        HOST: 0.0.0.0
+        PORT: 3000
+        DATABASE_URL: mysql://${MYSQL_USER}:${MYSQL_PASSWORD}@db:3306/${MYSQL_DATABASE}
+    depends_on:
+        db:
+            condition: service_healthy
