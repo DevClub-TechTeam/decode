@@ -8,5 +8,14 @@
   },
   "peerDependencies": {
     "typescript": "^5"
+  },
+  "scripts": {
+    "db:migrate": "bun run scripts/database/migrate.ts",
+    "db:clear": "bun run scripts/database/clear.ts",
+    "user:create": "bun run scripts/user/create.ts",
+    "team:create": "bun run scripts/team/create.ts"
+  },
+  "dependencies": {
+    "@inquirer/prompts": "^8.7.5"
   }
 }
